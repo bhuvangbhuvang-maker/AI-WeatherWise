@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AI WeatherWise - Smart Weather Information and Intelligent Weather Advice"
+    >
+
+    <title>AI WeatherWise</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+
+        <header>
+
+            <h1>
+                🌤️ AI WeatherWise
+            </h1>
+
+            <p>
+                Smart Weather Information & Intelligent Advice
+            </p>
+
+        </header>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Enter city name"
+                autocomplete="off"
+            >
+
+            <button
+                onclick="getWeather()"
+            >
+                🔍 Search
+            </button>
+
+        </div>
+
+
+        <p id="errorMessage"></p>
+
+
+        <p
+            id="loadingMessage"
+            class="hidden"
+        >
+            🔄 Fetching weather data...
+        </p>
+
+
+        <section
+            id="weatherSection"
+            class="hidden"
+        >
+
+
+            <!-- CURRENT WEATHER -->
+
+            <div class="weather-card">
+
+                <h2 id="cityName">
+                    Chennai
+                </h2>
+
+                <p id="condition">
+                    Weather condition
+                </p>
+
+
+                <div class="temperature">
+
+                    <span id="temperature">
+                        --
+                    </span>
+
+                    °C
+
+                </div>
+
+
+                <div class="weather-details">
+
+
+                    <div class="detail">
+
+                        <span>🌡️</span>
+
+                        <p>
+                            Feels Like
+                        </p>
+
+                        <strong id="feelsLike">
+                            --
+                        </strong>
+
+                        °C
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>💧</span>
+
+                        <p>
+                            Humidity
+                        </p>
+
+                        <strong id="humidity">
+                            --
+                        </strong>
+
+                        %
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>💨</span>
+
+                        <p>
+                            Wind Speed
+                        </p>
+
+                        <strong id="windSpeed">
+                            --
+                        </strong>
+
+                        m/s
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- ADVICE -->
+
+            <div class="card">
+
+                <h2>
+                    🤖 Intelligent Weather Advice
+                </h2>
+
+                <ul id="adviceList">
+
+                    <li>
+                        Search for a city to get weather advice.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- ALERTS -->
+
+            <div class="card">
+
+                <h2>
+                    ⚠️ Weather Alerts
+                </h2>
+
+                <div id="alertsContainer">
+
+                    <p>
+                        No alerts available.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="card">
+
+                <h2>
+                    📝 Weather Summary
+                </h2>
+
+                <p id="summary">
+
+                    Search for a city to get a weather summary.
+
+                </p>
+
+            </div>
+
+
+            <!-- FORECAST -->
+
+            <div class="card">
+
+                <h2>
+                    📅 5-Day Forecast
+                </h2>
+
+                <div
+                    id="forecastContainer"
+                    class="forecast-container"
+                >
+                </div>
+
+            </div>
+
+
+            <!-- CHART -->
+
+            <div class="card">
+
+                <h2>
+                    📊 Temperature Trend
+                </h2>
+
+                <div
+                    style="
+                        position: relative;
+                        width: 100%;
+                        min-height: 300px;
+                    "
+                >
+
+                    <canvas
+                        id="temperatureChart"
+                    >
+                    </canvas>
+
+                </div>
+
+            </div>
+
+
+            <!-- HISTORY -->
+
+            <div class="card">
+
+                <h2>
+                    🔎 Recent Search History
+                </h2>
+
+                <div id="historyContainer">
+
+                    <p>
+                        Search history will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                🌤️ AI WeatherWise
+            </p>
+
+            <p>
+                Smart Weather Information & Intelligent Advice
+            </p>
+
+            <small>
+                Powered by OpenWeather API & MongoDB
+            </small>
+
+        </footer>
+
+
+    </div>
+
+
+    <!-- CHART.JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js"
+    >
+    </script>
+
+
+    <!-- PROJECT JAVASCRIPT -->
+
+    <script
+        src="script.js"
+    >
+    </script>
+
+
+</body>
+
+</html>
